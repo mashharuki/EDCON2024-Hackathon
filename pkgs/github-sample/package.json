@@ -1,0 +1,21 @@
+{
+  "name": "github-sample",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "getCommmits": "npx ts-node ./src/index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.11",
+    "dotenv": "^16.4.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "octokit": "^4.0.2"
+  }
+}

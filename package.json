@@ -1,0 +1,15 @@
+{
+  "name": "EDCON2024-Hackathon",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "repository": "https://github.com/mashharuki/EDCON2024-Hackathon.git",
+  "author": "Haruki Kondo",
+  "license": "MIT",
+  "workspaces": [
+    "pkgs/*"
+  ],
+  "scripts": {
+    "github-sample": "yarn workspace github-sample"
+  }
+}
