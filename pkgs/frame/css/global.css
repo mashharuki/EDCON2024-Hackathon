@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-100;
+}
+
+.btn {
+  @apply px-4 py-2 rounded shadow-md text-white;
+}
+
+.btn-blue {
+  @apply bg-blue-500 hover:bg-blue-700;
+}
+
+.btn-green {
+  @apply bg-green-500 hover:bg-green-700;
+}
+
+.btn-gray {
+  @apply bg-gray-500 hover:bg-gray-700;
+}
+
+.btn-sepia {
+  @apply bg-yellow-500 hover:bg-yellow-700;
+}
+
+.btn-normal {
+  @apply bg-white text-black hover:bg-gray-300;
+}

@@ -1,15 +1,19 @@
-import { headers } from "next/headers";
+import {headers} from "next/headers";
 
+export const APP_NAME = "ONCHAIN Cheki";
 export const CHAIN_ID = "84532";
-export const MYNFT_COONTRACT_ADDRESS = "0xFEbf942Ce0f403a48a01D4757710289E0458bca9";
-export const OPENSEA_URL = "https://testnets.opensea.io/collection/unidentified-contract-fe1625d2-95bf-4cff-bc65-756c";
-export const LOGO_URL = "https://bafybeib5qpd75kzjzkk4iko5ul72lm2yxhkdximeutfafkw3x2jqotfldi.ipfs.w3s.link/UNCHAIN_logo.png";
+export const MYNFT_COONTRACT_ADDRESS =
+  "0xFEbf942Ce0f403a48a01D4757710289E0458bca9";
+export const OPENSEA_URL =
+  "https://testnets.opensea.io/collection/unidentified-contract-fe1625d2-95bf-4cff-bc65-756c";
+export const LOGO_URL =
+  "https://bafybeib5qpd75kzjzkk4iko5ul72lm2yxhkdximeutfafkw3x2jqotfldi.ipfs.w3s.link/UNCHAIN_logo.png";
 export const UNCHAIN_PAGE_URL = "https://buidl.unchain.tech/";
 
 /**
  * currentURL method
- * @param pathname 
- * @returns 
+ * @param pathname
+ * @returns
  */
 export function currentURL(pathname: string): URL {
   try {
@@ -26,7 +30,7 @@ export function currentURL(pathname: string): URL {
 
 /**
  * appURL method
- * @returns 
+ * @returns
  */
 export function appURL() {
   if (process.env.APP_URL) {
@@ -42,7 +46,7 @@ export function appURL() {
 
 /**
  * vercelURL method
- * @returns 
+ * @returns
  */
 export function vercelURL() {
   return process.env.VERCEL_URL

@@ -1,29 +1,32 @@
 import { fetchMetadata } from "frames.js/next";
 import { Metadata } from "next";
-import Head from "next/head";
-import { appURL } from "./utils";
+import "./../css/global.css";
+import Header from "./components/Header";
+import PhotoCapture from "./components/PhotoCapture";
+import { APP_NAME, appURL } from "./utils";
 
+/**
+ * generateMetadata method
+ * @returns
+ */
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Frames Next.js Example",
+    title: APP_NAME,
     other: {
-      ...(await fetchMetadata(
-        new URL("/frames", appURL())
-      )),
+      ...(await fetchMetadata(new URL("/frames", appURL()))),
     },
   };
 }
 
+/**
+ * Home Component
+ * @returns
+ */
 export default async function Home() {
   return (
     <>
-      <Head>
-        <title>Frames.js app</title>
-       
-      </Head>
-      <div>
-        GM user data example.
-      </div>
+      <Header />
+      <PhotoCapture />
     </>
   );
 }
