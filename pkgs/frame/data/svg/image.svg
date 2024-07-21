@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="270" height="270" fill="none">
+  <path fill="url(#B)" d="M0 0h270v270H0z"/>
+  <defs>
+    <filter id="A" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="270" width="270">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity=".225" width="200%" height="200%"/>
+    </filter>
+  </defs>
+  <defs>
+    <linearGradient id="B" x1="40" y1="0" x2="0" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#cb5eee"/>
+      <stop offset="1" stop-color="#0cd7e4" stop-opacity=".99"/>
+    </linearGradient>
+  </defs>
+  <text x="32.5" y="231" font-size="27" fill="#fff" filter="url(#A)" font-family="Plus Jakarta Sans,DejaVu Sans,Noto Color Emoji,Apple Color Emoji,sans-serif" font-weight="bold">
+  </text>
+  <defs>
+    <path id="circlePath" d="M135,135 m-110,0 a 110,110 0 1,0 220,0 a 110,110 0 1,0 -220,0"/>
+  </defs>
+  <text font-size="16" font-family="Plus Jakarta Sans,DejaVu Sans,Noto Color Emoji,Apple Color Emoji,sans-serif" fill="#fff">
+    <textPath href="#circlePath" startOffset="0%">
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 135 135" to="360 135 135" dur="10s" repeatCount="indefinite"/>
+      Let's Buidl Let's Buidl Let's Buidl Let's Buidl Let's Buidl Let's Buidl Let's Buidl
+    </textPath>
+  </text>
+</svg>

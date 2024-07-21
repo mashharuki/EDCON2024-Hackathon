@@ -40,6 +40,26 @@ We are developing "cast" to make this vision a reality.
 - Feature to mint photos as NFTs
 - Feature to post these NFTs on Farcaster
 
+## BlockChain
+
+BaseSepolia
+
+## 動かし方
+
+- install
+
+  ```bash
+  yarn
+  ```
+
+- run on localhost
+
+  ```bash
+  yarn frames dev
+  ```
+
+  [http://localhost:3010](http://localhost:3010)にアクセスする。
+
 ### Reference
 
 1. [FarHack](https://farhack.xyz/hackathons/edcon-2024)

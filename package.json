@@ -10,6 +10,7 @@
     "pkgs/*"
   ],
   "scripts": {
-    "github-sample": "yarn workspace github-sample"
+    "github-sample": "yarn workspace github-sample",
+    "frames": "yarn workspace frames"
   }
 }
