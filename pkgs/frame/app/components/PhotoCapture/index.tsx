@@ -7,19 +7,24 @@ import { FaCamera } from "react-icons/fa";
  * @returns
  */
 export default async function PhotoCapture() {
-  const videoRef = useRef(null);
-  const canvasRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const [photoTaken, setPhotoTaken] = useState(false);
-  const [photo, setPhoto] = useState(null);
+  const [photo, setPhoto] = useState<string | null>(null);
 
   /**
    * startCamera method
    */
-  const startCamera = async () => {
-    if (videoRef.current != undefined) {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-      // @ts-ignore
-      videoRef.current.srcObject = stream;
+  const startCamera = () => {
+    if (videoRef.current) {
+      navigator.mediaDevices
+        .getUserMedia({ video: true })
+        .then((stream) => {
+          videoRef.current!.srcObject = stream;
+        })
+        .catch((error) => {
+          console.error("Error accessing camera: ", error);
+        });
     }
   };
 
@@ -27,17 +32,15 @@ export default async function PhotoCapture() {
    * stopCamera method
    */
   const takePhoto = () => {
-    if (canvasRef.current == undefined) {
-      // @ts-ignore
+    if (canvasRef.current && videoRef.current) {
       const context = canvasRef.current.getContext("2d");
-      console.log("context:", context);
-      context.drawImage(videoRef.current, 0, 0, 640, 480);
-      setPhotoTaken(true);
+      if (context) {
+        context.drawImage(videoRef.current, 0, 0, 640, 480);
+        setPhotoTaken(true);
 
-      // @ts-ignore
-      const imageData = canvasRef.current.toDataURL("image/png");
-      console.log("imageData:", imageData); // 追加: データURLをコンソールに出力
-      setPhoto(imageData);
+        const imageData = canvasRef.current.toDataURL("image/png");
+        setPhoto(imageData);
+      }
     }
   };
 
@@ -45,12 +48,13 @@ export default async function PhotoCapture() {
    * applyFilter method
    * @param filter
    */
-  const applyFilter = (filter: any) => {
-    if (canvasRef.current == undefined) {
-      // @ts-ignore
+  const applyFilter = (filter: string) => {
+    if (canvasRef.current && videoRef.current) {
       const context = canvasRef.current.getContext("2d");
-      context.filter = filter;
-      context.drawImage(videoRef.current, 0, 0, 640, 480);
+      if (context) {
+        context.filter = filter;
+        context.drawImage(videoRef.current, 0, 0, 640, 480);
+      }
     }
   };
 
@@ -69,6 +73,12 @@ export default async function PhotoCapture() {
             >
               <FaCamera /> <span>Take Photo</span>
             </button>
+            <a
+              target="_blank"
+              href="http://localhost:3010/?url=http://localhost:3000"
+            >
+              <button className="btn btn-blue">Mint NFT</button>
+            </a>
           </div>
         </>
       )}
