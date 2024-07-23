@@ -1,11 +1,12 @@
-from flask import Flask, request, jsonify
-import cv2
-import numpy as np
-from skimage.filters import gaussian
-from test import evaluate
 import base64
 import json
+from test import evaluate
+
+import cv2
+import numpy as np
+from flask import Flask, jsonify, request
 from flask_cors import CORS
+from skimage.filters import gaussian
 
 app = Flask(__name__)
 CORS(app)  # ここでCORSを設定
