@@ -11,6 +11,8 @@
   ],
   "scripts": {
     "github-sample": "yarn workspace github-sample",
-    "frames": "yarn workspace frames"
+    "frames": "yarn workspace frames",
+    "api": "yarn workspace api",
+    "backend": "yarn workspace backend"
   }
 }

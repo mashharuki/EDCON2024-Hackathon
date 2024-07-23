@@ -1,63 +1,72 @@
-# face-makeup.PyTorch
-Lip and hair color editor using face parsing maps.
+# Fhenix Hardhat Example [![Open in Gitpod][gitpod-badge]][gitpod]
 
-<table>
+[gitpod]: https://gitpod.io/#https://github.com/fhenixprotocol/fhenix-hardhat-example
+[gitpod-badge]: https://img.shields.io/badge/Gitpod-Open%20in%20Gitpod-FFB45B?logo=gitpod
 
-<tr>
-<th>&nbsp;</th>
-<th>Hair</th>
-<th>Lip</th>
-</tr>
+This repository contains a sample project that you can use as the starting point
+for your Fhenix project. It's also a great fit for learning the basics of
+Fhenix smart contract development.
 
-<!-- Line 1: Original Input -->
-<tr>
-<td><em>Original Input</em></td>
-<td><img src="makeup/116_ori.png" height="256" width="256" alt="Original Input"></td>
-<td><img src="makeup/116_lip_ori.png" height="256" width="256" alt="Original Input"></td>
-</tr>
+This project is intended to be used with the
+[Fhenix Hardhat Beginners Tutorial](TODO), but you should be
+able to follow it by yourself by reading the README and exploring its
+`contracts`, `tests`, `deploy` and `tasks` directories.
 
-<!-- Line 2: Color -->
-<tr>
-<td >Color</td>
-<td><img src="makeup/116_0.png" height="256" width="256" alt="Color"></td>
-<td><img src="makeup/116_6.png" height="256" width="256" alt="Color"></td>
-</tr>
+It comes with two fhenix-specific hardhat plugins:
 
-<!-- Line 3: Color -->
-<tr>
-<td>Color</td>
-<td><img src="makeup/116_1.png" height="256" width="256" alt="Color"></td>
-<td><img src="makeup/116_3.png" height="256" width="256" alt="Color"></td>
-</tr>
+- `fhenix-hardhat-plugin`: The main plugin for fhenix development in hardhat. It injects `fhenixjs` into the hardhat runtime environment, which allows you to interact with encrypted data in your tests and tasks.
+- `fhenix-hardhat-docker`: A plugin that allows you to run a local Fhenix testnet in a docker container. This is useful for testing your contracts in a sandbox before deploying them on a testnet or on mainnet.
 
-<!-- Line 4: Color -->
-<tr>
-<td>Color</td>
-<td><img src="makeup/116_2.png" height="256" width="256" alt="Color"></td>
-<td><img src="makeup/116_4.png" height="256" width="256" alt="Color"></td>
-</tr>
+## Quick start
 
-</table>
+The first things you need to do are cloning this repository and installing its dependencies:
 
-### Using PyTorch 1.0 and python 3.x
-
-## API
-```Shell
-python -m venv myenv
-myenv\Scripts\activate
-pip install -r requirements.txt
-python app.py 
+```sh
+git clone https://github.com/FhenixProtocol/fhenix-hardhat-example.git
+cd fhenix-hardhat-example
+pnpm install
 ```
 
-## Demo
-Change hair and lip color:
-```Shell
-python makeup.py --img-path imgs/116.jpg
+Next, you need an .env file containing your mnemonics or keys. You can use .env.example that comes with a predefined mnemonic, or use your own
+
+```sh
+cp .env.example .env
 ```
-### Try to use other colors:
-Change the color list in **makeup.py**(line 83)
+
+Once the file exists, let's run a LocalFhenix instance:
+
+```sh
+pnpm localfhenix:start
 ```
-colors = [[230, 50, 20], [20, 70, 180], [20, 70, 180]]
+
+This will start a LocalFhenix instance in a docker container. If this worked you should see a `Started LocalFhenix successfully` message in your console.
+
+If not, please make sure you have `docker` installed and running on your machine. You can find instructions on how to install docker [here](https://docs.docker.com/get-docker/).
+
+Now that we have a LocalFhenix instance running, we can deploy our contracts to it:
+
+```sh
+npx hardhat deploy
 ```
-### Train face parsing model (optional)
-Follow this repo [zllrunning/face-parsing.PyTorch](https://github.com/zllrunning/face-parsing.PyTorch)
+
+Note that this template defaults to use the `localfhenix` network, which is injected into the hardhat configuration.
+
+Finally, we can run the tasks with:
+
+```sh
+pnpm task:getCount # => 0
+pnpm task:addCount
+pnpm task:getCount # => 1
+pnpm task:addCount --amount 5
+pnpm task:getCount # => 6
+```
+
+## Troubleshooting
+
+If Localfhenix doesn't start this could indicate an error with docker. Please verify that docker is running correctly using the `docker run hello-world` command, which should run a basic container and verify that everything is plugged in.
+
+For example, if the docker service is installed but not running, it might indicate you need to need to start it manually.
+
+## More Info
+
+To learn more about the Fhenix Hardhat plugin, check out the [Fhenix Hardhat Plugin Repository](https://github.com/FhenixProtocol/fhenix-hardhat-plugin).
