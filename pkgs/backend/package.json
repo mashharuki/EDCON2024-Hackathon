@@ -1,0 +1,12 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "setUp": "pip install -r requirements.txt",
+    "sample": "python app.py",
+    "demo": "python makeup.py --img-path imgs/116.jpg"
+  }
+}
