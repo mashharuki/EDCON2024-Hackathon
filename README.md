@@ -2,6 +2,12 @@
 
 This repo for EDCON2024-Hackathon
 
+![Vercel Deploy](https://deploy-badge.vercel.app/vercel/edcon-2024-hackathon-frame)
+
+## live demo
+
+[https://edcon-2024-hackathon-frame.vercel.app/](https://edcon-2024-hackathon-frame.vercel.app/)
+
 ## アイディア
 
 Web3 版 チェキ - Onchain チェキ
