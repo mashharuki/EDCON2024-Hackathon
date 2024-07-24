@@ -13,6 +13,12 @@ Web3 版 チェキ - Onchain チェキ
 
 私達は、そんな思いを実現させる cast を開発します。
 
+撮影した写真を加工したりサインを入れたりして思い出をfarcaster上に投稿します。
+
+気に入ったらNFTとしてもミントできます。
+
+チェキのように撮った人通しで思い出としてNFTをミントしておくこともできます！！
+
 ## Ideas
 
 Web3 version of Cheki - Onchain Cheki
@@ -28,7 +34,9 @@ You take a photo with a browser application and process the photo afterwards.
 
 The idea is that the processed photos can be published as NFT within Farcaster.
 
-Translated with DeepL.com (free version)
+If you like it, you can mint it as NFT.
+
+You can also mint the NFT as a memory through the person who took the picture, just like a Cheki!
 
 ## 機能
 
