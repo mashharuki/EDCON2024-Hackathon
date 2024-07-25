@@ -6,7 +6,7 @@ import { FaCamera } from "react-icons/fa";
  * PhotoCapture Component
  * @returns
  */
-export default async function PhotoCapture() {
+export default function PhotoCapture() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [photoTaken, setPhotoTaken] = useState(false);
@@ -31,11 +31,12 @@ export default async function PhotoCapture() {
   /**
    * stopCamera method
    */
-  const takePhoto = () => {
+  const takePhoto = async () => {
     if (canvasRef.current && videoRef.current) {
       const context = canvasRef.current.getContext("2d");
+      console.log("context", context);
       if (context) {
-        context.drawImage(videoRef.current, 0, 0, 640, 480);
+        await context.drawImage(videoRef.current, 0, 0, 640, 480);
         setPhotoTaken(true);
 
         const imageData = canvasRef.current.toDataURL("image/png");
@@ -73,12 +74,6 @@ export default async function PhotoCapture() {
             >
               <FaCamera /> <span>Take Photo</span>
             </button>
-            <a
-              target="_blank"
-              href="http://localhost:3010/?url=http://localhost:3000"
-            >
-              <button className="btn btn-blue">Mint NFT</button>
-            </a>
           </div>
         </>
       )}
@@ -89,26 +84,36 @@ export default async function PhotoCapture() {
         className="mt-4 border"
       />
       {photoTaken && (
-        <div className="mt-4 flex space-x-4">
-          <button
-            onClick={() => applyFilter("grayscale(100%)")}
-            className="btn btn-gray"
-          >
-            Grayscale
-          </button>
-          <button
-            onClick={() => applyFilter("sepia(100%)")}
-            className="btn btn-sepia"
-          >
-            Sepia
-          </button>
-          <button
-            onClick={() => applyFilter("none")}
-            className="btn btn-normal"
-          >
-            Normal
-          </button>
-        </div>
+        <>
+          <div className="mt-4 flex space-x-4">
+            <button
+              onClick={() => applyFilter("grayscale(100%)")}
+              className="btn btn-gray"
+            >
+              Grayscale
+            </button>
+            <button
+              onClick={() => applyFilter("sepia(100%)")}
+              className="btn btn-sepia"
+            >
+              Sepia
+            </button>
+            <button
+              onClick={() => applyFilter("none")}
+              className="btn btn-normal"
+            >
+              Normal
+            </button>
+          </div>
+          <div className="mt-4 space-x-4">
+            <a
+              target="_blank"
+              href="https://warpcast.com/mashharuki/0x636c4ddd"
+            >
+              <button className="btn btn-blue">Mint NFT</button>
+            </a>
+          </div>
+        </>
       )}
       {photo && (
         <div className="mt-8">

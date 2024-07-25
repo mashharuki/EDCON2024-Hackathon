@@ -29,7 +29,16 @@ const func: DeployFunction = async function () {
     skipIfAlreadyDeployed: false,
   });
 
+  // NFTをデプロイ
+  const nft = await deploy("MyNFT", {
+    from: signer.address,
+    args: [],
+    log: true,
+    skipIfAlreadyDeployed: false,
+  });
+
   console.log(`Counter contract: `, counter.address);
+  console.log(`MyNFT contract: `, nft.address);
 };
 
 export default func;

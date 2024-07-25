@@ -4,10 +4,10 @@
   "private": true,
   "description": "An example repository to get you started with Fhenix development",
   "scripts": {
-    "test": "hardhat test",
+    "test": "npx hardhat test",
     "clean": "rimraf ./artifacts ./cache ./coverage ./types ./coverage.json ./deployments/localfhenix",
-    "compile": "hardhat compile",
-    "task:deploy": "hardhat deploy",
+    "compile": "npx hardhat compile",
+    "task:deploy": "npx hardhat deploy",
     "task:addCount": "hardhat task:addCount",
     "task:getCount": "hardhat task:getCount",
     "task:getFunds": "hardhat task:getFunds",
@@ -55,5 +55,8 @@
     "ts-node": "^10.9.2",
     "typechain": "^8.3.2",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "5.0.2"
   }
 }

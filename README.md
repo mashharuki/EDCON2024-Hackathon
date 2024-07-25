@@ -8,6 +8,10 @@ This repo for EDCON2024-Hackathon
 
 [https://edcon-2024-hackathon-frame.vercel.app/](https://edcon-2024-hackathon-frame.vercel.app/)
 
+## Deployed Contract
+
+[0x8DF7e6234f76e8fAC829feF83E7520635359094C](https://explorer.helium.fhenix.zone/address/0x8DF7e6234f76e8fAC829feF83E7520635359094C)
+
 ## アイディア
 
 Web3 版 チェキ - Onchain チェキ
@@ -19,11 +23,11 @@ Web3 版 チェキ - Onchain チェキ
 
 私達は、そんな思いを実現させる cast を開発します。
 
-撮影した写真を加工したりサインを入れたりして思い出をfarcaster上に投稿します。
+撮影した写真を加工したりサインを入れたりして思い出を farcaster 上に投稿します。
 
-気に入ったらNFTとしてもミントできます。
+気に入ったら NFT としてもミントできます。
 
-チェキのように撮った人通しで思い出としてNFTをミントしておくこともできます！！
+チェキのように撮った人通しで思い出として NFT をミントしておくこともできます！！
 
 ## Ideas
 
